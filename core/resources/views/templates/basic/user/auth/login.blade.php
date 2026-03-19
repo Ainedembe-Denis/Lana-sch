@@ -14,103 +14,36 @@
                     <h3 class="text-capitalize text-center mt-0 mb-4">
                         {{ __(@$loginContent->data_values->heading) }}
                     </h3>
-                    <form method="POST" action="{{ route('user.login') }}" class="row g-4 verify-gcaptcha">
-                        @csrf
-                        <div class="col-12">
-                            <div class="auth-form__input-group">
-                                <span class="auth-form__input-icon">
-                                    <i class="la la-user"></i>
-                                </span>
-                                <input type="text" name="username" class="auth-form__input" value="{{ old('username') }}" placeholder="@lang('Username or Email')" required />
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="auth-form__input-group">
-                                <span class="auth-form__input-icon">
-                                    <i class="la la-lock"></i>
-                                </span>
-                                <input type="password" name="password" class="auth-form__input" placeholder="@lang('Your password')" required />
-                                <span class="auth-form__input-icon auth-form__toggle-pass">
-                                    <i class="bx bxs-hide"></i>
-                                </span>
-                            </div>
-                        </div>
 
-                        <div class="col-12">
-                            <div class="d-flex flex-wrap justify-content-between my-4">
-                                <div class="form-group form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="remember">
-                                        @lang('Remember Me')
-                                    </label>
-                                </div>
-                                <a class="forgot-pass text-decoration-none" href="{{ route('user.password.request') }}">
-                                    @lang('Forgot password?')
-                                </a>
-                            </div>
-                        </div>
+                    <div class="login-info-box">
+                        <p class="login-info-text mb-3">
+                            @php
+                                echo __(strip_tags(@$loginContent->data_values->intro_1 ?? "Ready to start your language learning journey? Applying to Lana Language Centre is simple and straightforward. Whether you want to learn German or explore Ugandan languages, we're here to guide you through the process."));
+                            @endphp
+                        </p>
+                        <p class="login-info-text mb-4">
+                            @php
+                                echo __(strip_tags(@$loginContent->data_values->intro_2 ?? "Our admissions team is ready to help you choose the right course for your needs and answer any questions you may have about our programs, schedules, and fees."));
+                            @endphp
+                        </p>
 
-                        <x-captcha />
-
-                        <div class="col-12">
-                            <button type="submit" class="btn btn--base btn--xxl w-100 text-capitalize xl-text">
-                                @lang('Login')
-                            </button>
-                        </div>
-
-                        <div class="col-12">
-                            <p class="mb-0 text-capitalize text-center">
-                                @lang('Already have an account yet')?
-                                <a href="{{ route('user.register') }}" class="text-decoration-none">
-                                    @lang('Register Now')
-                                </a>
-                            </p>
-                        </div>
-
-                        @php
-                            $credentials = gs('socialite_credentials');
-                        @endphp
-                        @if ($credentials->google->status == Status::ENABLE || $credentials->facebook->status == Status::ENABLE || $credentials->linkedin->status == Status::ENABLE)
-                            <div class="col-12">
-                                <div class="auth-form__divider">
-                                    <span class="d-block text-center text-capitalize auth-form__divider-text">
-                                        @lang(' or')
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <p class="mb-0 text-capitalize text-center">
-                                    @lang('Continue with social media')
-                                </p>
-                            </div>
-
-                            <div class="col-12">
-                                <ul class="list list--row justify-content-center">
-                                    @if ($credentials->facebook->status == Status::ENABLE)
-                                        <li class="list--row__item">
-                                            <a href="{{ route('user.social.login', 'facebook') }}" class="t-link icon icon--circle icon--md bg--primary t-text-white t-link--light">
-                                                <i class="bx bxl-facebook"></i>
-                                            </a>
-                                        </li>
-                                    @endif
-                                    @if ($credentials->google->status == Status::ENABLE)
-                                        <li class="list--row__item">
-                                            <a href="{{ route('user.social.login', 'google') }}" class="t-link icon icon--circle icon--md bg--danger t-text-white t-link--light">
-                                                <i class="bx bxl-google"></i>
-                                            </a>
-                                        </li>
-                                    @endif
-                                    @if ($credentials->linkedin->status == Status::ENABLE)
-                                        <li class="list--row__item">
-                                            <a href="{{ route('user.social.login', 'linkedin') }}" class="t-link icon icon--circle icon--md bg--info t-text-white t-link--light">
-                                                <i class="bx bxl-linkedin"></i>
-                                            </a>
-                                        </li>
-                                    @endif
+                        <div class="row g-2 login-steps">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li>▢ {{ __(@$loginContent->data_values->step_1 ?? 'Start Online Submission') }}</li>
+                                    <li>▢ {{ __(@$loginContent->data_values->step_2 ?? 'Submit The Form') }}</li>
+                                    <li>▢ {{ __(@$loginContent->data_values->step_3 ?? 'Review The Submission') }}</li>
                                 </ul>
                             </div>
-                        @endif
-                    </form>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li>▢ {{ __(@$loginContent->data_values->step_4 ?? 'Gather Necessary Documents') }}</li>
+                                    <li>▢ {{ __(@$loginContent->data_values->step_5 ?? 'Interviewing Process') }}</li>
+                                    <li>▢ {{ __(@$loginContent->data_values->step_6 ?? 'Last Decision') }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

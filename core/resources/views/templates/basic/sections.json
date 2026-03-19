@@ -252,7 +252,15 @@
                     "size": "800x1100"
                 }
             },
-            "heading": "text"
+            "heading": "text",
+            "intro_1": "textarea-nic",
+            "intro_2": "textarea-nic",
+            "step_1": "text",
+            "step_2": "text",
+            "step_3": "text",
+            "step_4": "text",
+            "step_5": "text",
+            "step_6": "text"
         }
     },
     "kyc": {
