@@ -147,13 +147,67 @@
                     </li>
                     @if (@$pages)
                         @foreach ($pages as $k => $data)
-                            <li class="nav-item">
-                                <a class="{{ menuActive('pages', [$data->slug]) }} nav-link" href="{{ route('pages', [$data->slug]) }}">{{ __($data->name) }}</a>
-                            </li>
+                            @php
+                                $name = __($data->name);
+                            @endphp
+                            @if (stripos($name, 'Course') !== false || $data->slug == 'courses')
+                                <li class="nav-item has-mega-menu dropdown">
+                                    <a class="nav-link dropdown-toggle" href="{{ route('pages', $data->slug) }}" data-bs-toggle="dropdown" aria-expanded="false">
+                                        {{ $name }} <i class="las la-angle-down" style="color: #336699;"></i>
+                                    </a>
+                                    <div class="mega-menu dropdown-menu">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <h6 class="mega-menu-title">About Us</h6>
+                                                    <div class="mega-menu-content">
+                                                        <img src="{{ siteLogo() }}" alt="Logo" class="img-fluid mb-3" style="max-height: 100px;">
+                                                        <p>Lana Language Centre is Uganda's premier language school specializing in German languages, Indo-European languages, and Ugandan local languages.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <h6 class="mega-menu-title">German Courses</h6>
+                                                    <ul class="mega-menu-list">
+                                                        <li><a href="#">Format And Duration</a></li>
+                                                        <li><a href="#">German A1</a></li>
+                                                        <li><a href="#">German A2</a></li>
+                                                        <li><a href="#">German B1</a></li>
+                                                        <li><a href="#">German B2</a></li>
+                                                        <li><a href="#">German C1</a></li>
+                                                        <li><a href="#">German C2</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <h6 class="mega-menu-title">Other Languages</h6>
+                                                    <ul class="mega-menu-list">
+                                                        <li><a href="#">Format And Duration</a></li>
+                                                        <li><a href="#">Indo-European Languages</a></li>
+                                                        <li><a href="#">Ugandan Local Languages</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <h6 class="mega-menu-title">Get Started</h6>
+                                                    <ul class="mega-menu-list">
+                                                        <li><a href="#">Annual Program</a></li>
+                                                        <li><a href="#">Register To Start Classes</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            @else
+                                <li class="nav-item">
+                                    <a class="{{ menuActive('pages', [$data->slug]) }} nav-link" href="{{ route('pages', [$data->slug]) }}">{{ $name }}</a>
+                                </li>
+                            @endif
                         @endforeach
                     @endif
                     <li class="nav-item">
                         <a class="nav-link {{ menuActive('blog') }}" href="{{ route('blog') }}">@lang('Blogs')</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">@lang('Online Library')</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ menuActive('contact') }}" href="{{ route('contact') }}">@lang('Contact')</a>
@@ -170,7 +224,7 @@
                         <li class="nav-item mt-2 d-block d-lg-none">
                             <div class="account mt-1">
                                 <a href="{{ route('user.login') }}" class="btn btn--md btn--base fw-bold w-100">
-                                    @lang('Join Now')
+                                    @lang('HOW TO APPLY')
                                 </a>
                             </div>
                         </li>
@@ -187,7 +241,7 @@
             @else
                 <div class="account d-none d-lg-block">
                     <a href="{{ route('user.login') }}" class="btn btn--md btn--base fw-bold w-100">
-                        @lang('Login')
+                        @lang('HOW TO APPLY')
                     </a>
                 </div>
             @endauth
