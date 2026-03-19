@@ -6,4 +6,9 @@
             @include($activeTemplate . 'sections.' . $sec)
         @endforeach
     @endif
+
+    @if (request()->routeIs('pages') && request()->route('slug') === 'about')
+        @include($activeTemplate . 'sections.mission_goals')
+        @include($activeTemplate . 'sections.career_guidance')
+    @endif
 @endsection

@@ -56,8 +56,12 @@
             });
         });
         (function($) {
-            $(document).on('mouseover ', '.nicEdit-main,.nicEdit-panelContain', function() {
-                $('.nicEdit-main').focus();
+            // Avoid auto-focus on hover (causes page scroll jitter/jumping).
+            // Focus the editor only when the user interacts with it.
+            $(document).on('mousedown', '.nicEdit-main,.nicEdit-panelContain', function() {
+                try {
+                    this.focus?.();
+                } catch (e) {}
             });
 
             $('.breadcrumb-nav-open').on('click', function() {

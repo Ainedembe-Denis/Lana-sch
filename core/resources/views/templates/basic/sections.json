@@ -39,7 +39,30 @@
             "subheading": "text",
             "description": "textarea-nic",
             "button_name": "text",
-            "button_link": "text"
+            "button_link": "text",
+
+            "mission_title": "text",
+            "mission_text": "textarea-nic",
+            "motto_title": "text",
+            "motto_text": "text",
+            "vision_title": "text",
+            "vision_text": "textarea-nic",
+            "core_values_title": "text",
+            "core_value_1": "text",
+            "core_value_2": "text",
+            "core_value_3": "text",
+            "core_value_4": "text",
+
+            "career_title": "text",
+            "career_subtitle": "textarea-nic",
+            "career_item_1_title": "text",
+            "career_item_1_text": "textarea-nic",
+            "career_item_2_title": "text",
+            "career_item_2_text": "textarea-nic",
+            "career_item_3_title": "text",
+            "career_item_3_text": "textarea-nic",
+            "career_item_4_title": "text",
+            "career_item_4_text": "textarea-nic"
         }
     },
     "feature": {
