@@ -131,6 +131,31 @@ class SiteController extends Controller
         return view('Template::online_library', compact('pageTitle'));
     }
 
+    public function courseGermanA1()
+    {
+        return $this->courseDetail('german-a1');
+    }
+
+    public function courseDetail($courseSlug)
+    {
+        $pageTitle = 'Course Details';
+
+        $courses = Frontend::where('data_keys', 'courses.element')
+            ->where('tempname', activeTemplateName())
+            ->orderBy('id')
+            ->get();
+
+        $course = Frontend::where('data_keys', 'courses.element')
+            ->where('tempname', activeTemplateName())
+            ->where('slug', $courseSlug)
+            ->firstOrFail();
+
+        // Best-effort title (some courses may not set a title).
+        $pageTitle = $course->data_values->title ?? $pageTitle;
+
+        return view('Template::course_detail', compact('pageTitle', 'courses', 'course'));
+    }
+
     public function blogDetails($slug)
     {
         $blog        = Frontend::where('slug', $slug)->where('data_keys', 'blog.element')->firstOrFail();

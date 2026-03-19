@@ -325,6 +325,18 @@
             "card6_item4": "text"
         }
     },
+    "courses": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Courses",
+        "element": {
+            "title": "text",
+            "slug": "text",
+            "summary": "text",
+            "body": "textarea-nic",
+            "modal": false
+        }
+    },
     "kyc": {
         "builder": true,
         "no_selection": true,

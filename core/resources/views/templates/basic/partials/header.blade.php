@@ -169,8 +169,8 @@
                                                     <h6 class="mega-menu-title">German Courses</h6>
                                                     <ul class="mega-menu-list">
                                                         <li><a href="#">Format And Duration</a></li>
-                                                        <li><a href="#">German A1</a></li>
-                                                        <li><a href="#">German A2</a></li>
+                                                        <li><a href="{{ route('courses.detail', 'german-a1') }}">German A1</a></li>
+                                                        <li><a href="{{ route('courses.detail', 'german-a2') }}">German A2</a></li>
                                                         <li><a href="#">German B1</a></li>
                                                         <li><a href="#">German B2</a></li>
                                                         <li><a href="#">German C1</a></li>
