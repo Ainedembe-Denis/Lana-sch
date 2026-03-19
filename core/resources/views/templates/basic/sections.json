@@ -260,7 +260,17 @@
             "step_3": "text",
             "step_4": "text",
             "step_5": "text",
-            "step_6": "text"
+            "step_6": "text",
+
+            "know_first_title": "text",
+            "know_first_body": "textarea-nic",
+            "required_docs_title": "text",
+            "required_docs_intro": "textarea-nic",
+            "required_doc_1": "text",
+            "required_doc_2": "text",
+            "required_doc_3": "text",
+            "required_doc_4": "text",
+            "required_doc_5": "text"
         }
     },
     "kyc": {
