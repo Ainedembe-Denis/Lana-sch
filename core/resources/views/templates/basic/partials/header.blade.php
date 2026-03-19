@@ -207,7 +207,7 @@
                         <a class="nav-link {{ menuActive('blog') }}" href="{{ route('blog') }}">@lang('Blogs')</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">@lang('Online Library')</a>
+                        <a class="nav-link {{ menuActive('online.library') }}" href="{{ route('online.library') }}">@lang('Online Library')</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ menuActive('contact') }}" href="{{ route('contact') }}">@lang('Contact')</a>

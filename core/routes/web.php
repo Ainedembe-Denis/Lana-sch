@@ -25,6 +25,7 @@ Route::get('app/deposit/confirm/{hash}', 'Gateway\PaymentController@appDepositCo
 Route::controller('SiteController')->group(function () {
     Route::get('/contact', 'contact')->name('contact');
     Route::post('/contact', 'contactSubmit');
+    Route::get('/online-library', 'onlineLibrary')->name('online.library');
     Route::get('/change/{lang?}', 'changeLanguage')->name('lang');
 
     Route::get('cookie-policy', 'cookiePolicy')->name('cookie.policy');

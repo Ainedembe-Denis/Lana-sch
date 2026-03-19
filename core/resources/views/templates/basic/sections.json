@@ -273,6 +273,58 @@
             "required_doc_5": "text"
         }
     },
+    "online_library": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Online Library",
+        "content": {
+            "title_primary": "text",
+            "title_accent": "text",
+            "subtitle": "textarea-nic",
+            "overview_heading": "text",
+            "overview_body": "textarea-nic",
+
+            "card1_title": "text",
+            "card1_body": "textarea-nic",
+            "card1_item1": "text",
+            "card1_item2": "text",
+
+            "card2_title": "text",
+            "card2_body": "textarea-nic",
+            "card2_item1": "text",
+            "card2_item2": "text",
+            "card2_item3": "text",
+            "card2_item4": "text",
+
+            "card3_title": "text",
+            "card3_body": "textarea-nic",
+            "card3_item1": "text",
+            "card3_item2": "text",
+            "card3_item3": "text",
+            "card3_item4": "text",
+
+            "card4_title": "text",
+            "card4_body": "textarea-nic",
+            "card4_item1": "text",
+            "card4_item2": "text",
+            "card4_item3": "text",
+            "card4_item4": "text",
+
+            "card5_title": "text",
+            "card5_body": "textarea-nic",
+            "card5_item1": "text",
+            "card5_item2": "text",
+            "card5_item3": "text",
+            "card5_item4": "text",
+
+            "card6_title": "text",
+            "card6_body": "textarea-nic",
+            "card6_item1": "text",
+            "card6_item2": "text",
+            "card6_item3": "text",
+            "card6_item4": "text"
+        }
+    },
     "kyc": {
         "builder": true,
         "no_selection": true,

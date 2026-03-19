@@ -125,6 +125,12 @@ class SiteController extends Controller
         return view('Template::blog', compact('pageTitle', 'blogs', 'sections'));
     }
 
+    public function onlineLibrary()
+    {
+        $pageTitle = 'Online Library';
+        return view('Template::online_library', compact('pageTitle'));
+    }
+
     public function blogDetails($slug)
     {
         $blog        = Frontend::where('slug', $slug)->where('data_keys', 'blog.element')->firstOrFail();
