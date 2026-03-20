@@ -146,7 +146,16 @@ class SiteController extends Controller
             ->get();
 
         // Prefer a course matching the slug; if none exists yet, fall back to the first course
-        $course = $courses->firstWhere('slug', $courseSlug) ?? $courses->first();
+        $course = $courses->firstWhere('slug', $courseSlug);
+
+        // Some builder implementations store the slug inside `data_values`.
+        if (!$course) {
+            $course = $courses->first(function ($item) use ($courseSlug) {
+                return ($item->data_values->slug ?? null) === $courseSlug;
+            });
+        }
+
+        $course = $course ?? $courses->first();
         abort_if(!$course, 404);
 
         // Best-effort title (some courses may not set a title).

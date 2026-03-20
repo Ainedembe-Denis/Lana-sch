@@ -11,11 +11,14 @@
                             @foreach ($courses as $item)
                                 @php
                                     $isActive = ($item->id === $course->id);
-                                    $itemSlug = $item->slug ?? null;
+                                    // Slug may be stored either on the model column (`slug`)
+                                    // or inside data_values (depending on how frontend builder saves it).
+                                    // Use `?:` so empty string doesn't break the fallback.
+                                    $itemSlug = ($item->slug ?: (@$item->data_values->slug ?? null));
                                     $itemTitle = @$item->data_values->title ?? 'Course';
                                 @endphp
                                 <li class="course-sidebar__item {{ $isActive ? 'course-sidebar__item--active' : '' }}">
-                                    <a href="{{ $itemSlug ? route('courses.detail', $itemSlug) : '#' }}">
+                                    <a href="{{ $itemSlug ? route('courses.detail', ['courseSlug' => $itemSlug]) : '#' }}">
                                         {{ __($itemTitle) }}
                                     </a>
                                 </li>

@@ -1,5 +1,9 @@
 @php
     $contactContent = getContent('contact.content', true);
+    $germanCourses = \App\Models\Frontend::where('data_keys', 'courses.element')
+        ->where('tempname', activeTemplateName())
+        ->orderBy('id')
+        ->get();
 @endphp
 
 <section class="top-header">
@@ -167,14 +171,34 @@
                                                 </div>
                                                 <div class="col-lg-3">
                                                     <h6 class="mega-menu-title">German Courses</h6>
+                                                    @php
+                                                        // Build dropdown from Courses elements (editable in admin/frontend).
+                                                        $germanCourseItems = $germanCourses->filter(function ($course) {
+                                                            $slug = $course->slug ?: (@$course->data_values->slug ?? null);
+                                                            return $slug && strpos($slug, 'german-') === 0;
+                                                        })->values();
+
+                                                        $formatDurationHref = '#';
+                                                        foreach ($germanCourseItems as $course) {
+                                                            $slug = $course->slug ?: (@$course->data_values->slug ?? null);
+                                                            if ($slug === 'german-a1') {
+                                                                $formatDurationHref = url('courses/german-a1');
+                                                                break;
+                                                            }
+                                                        }
+                                                    @endphp
                                                     <ul class="mega-menu-list">
-                                                        <li><a href="#">Format And Duration</a></li>
-                                                        <li><a href="{{ route('courses.detail', 'german-a1') }}">German A1</a></li>
-                                                        <li><a href="{{ route('courses.detail', 'german-a2') }}">German A2</a></li>
-                                                        <li><a href="#">German B1</a></li>
-                                                        <li><a href="#">German B2</a></li>
-                                                        <li><a href="#">German C1</a></li>
-                                                        <li><a href="#">German C2</a></li>
+                                                        <li><a href="{{ $formatDurationHref }}">Format And Duration</a></li>
+                                                        @foreach ($germanCourseItems as $course)
+                                                            @php
+                                                                $slug = $course->slug ?: (@$course->data_values->slug ?? null);
+                                                                $title = @$course->data_values->title ?? $slug;
+                                                                $isExcluded = $slug === 'german-a1'; // Avoid duplicating A1.
+                                                            @endphp
+                                                            @if ($slug && !$isExcluded)
+                                                                <li><a href="{{ url('courses/' . $slug) }}">{{ __($title) }}</a></li>
+                                                            @endif
+                                                        @endforeach
                                                     </ul>
                                                 </div>
                                                 <div class="col-lg-3">
