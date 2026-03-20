@@ -24,7 +24,9 @@
    
     @if ($sections->secs != null)
         @foreach (json_decode($sections->secs) as $sec)
-            @include($activeTemplate . 'sections.' . $sec)
+            @if ($sec !== 'client')
+                @include($activeTemplate . 'sections.' . $sec)
+            @endif
         @endforeach
     @endif
 
