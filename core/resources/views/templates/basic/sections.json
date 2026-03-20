@@ -346,5 +346,55 @@
             "pending": "text",
             "reject": "text"
         }
+    },
+    "annual_program": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Annual Program",
+        "content": {
+            "heading": "text",
+            "intro_body": "textarea-nic",
+            "course_reg_title": "text",
+            "intake_1_name": "text",
+            "intake_1_duration": "text",
+            "intake_1_course_dates": "text",
+            "intake_1_reg_dates": "text",
+            "intake_2_name": "text",
+            "intake_2_duration": "text",
+            "intake_2_course_dates": "text",
+            "intake_2_reg_dates": "text",
+            "intake_3_name": "text",
+            "intake_3_duration": "text",
+            "intake_3_course_dates": "text",
+            "intake_3_reg_dates": "text",
+            "intake_4_name": "text",
+            "intake_4_duration": "text",
+            "intake_4_course_dates": "text",
+            "intake_4_reg_dates": "text",
+            "exam_prep_faq_title": "text",
+            "faq_1_question": "text",
+            "faq_1_answer": "textarea-nic",
+            "faq_2_question": "text",
+            "faq_2_answer": "textarea-nic",
+            "faq_3_question": "text",
+            "faq_3_answer": "textarea-nic",
+            "exam_prep_courses_title": "text",
+            "exam_prep_1_intake": "text",
+            "exam_prep_1_dates": "text",
+            "exam_prep_2_intake": "text",
+            "exam_prep_2_dates": "text",
+            "exam_prep_3_intake": "text",
+            "exam_prep_3_dates": "text",
+            "exam_prep_4_intake": "text",
+            "exam_prep_4_dates": "text",
+            "book_slot_title": "text"
+        },
+        "element": {
+            "level": "text",
+            "exam_type": "text",
+            "color_class": "text",
+            "book_url": "text",
+            "modal": true
+        }
     }
 }

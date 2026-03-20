@@ -131,6 +131,12 @@ class SiteController extends Controller
         return view('Template::online_library', compact('pageTitle'));
     }
 
+    public function annualProgram()
+    {
+        $pageTitle = 'Annual Program';
+        return view('Template::annual_program', compact('pageTitle'));
+    }
+
     public function courseGermanA1()
     {
         return $this->courseDetail('german-a1');

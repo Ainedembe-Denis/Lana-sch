@@ -966,3 +966,85 @@ button .spinner-border {
   width: auto;
   object-fit: contain;
 }
+
+/* Annual Program page */
+.annual-program__title {
+  font-weight: 800;
+  color: #1E2337;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.annual-program__body {
+  color: #6b7280;
+  line-height: 1.8;
+}
+
+.annual-program__table-title {
+  font-weight: 700;
+  color: #1E2337;
+}
+
+.annual-program__table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e5e7eb;
+}
+
+.annual-program__table th,
+.annual-program__table td {
+  padding: 12px 16px;
+  text-align: left;
+  border: 1px solid #e5e7eb;
+}
+
+.annual-program__table thead th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+  color: #374151;
+}
+
+.annual-program__table--course-reg .annual-program__cell--yellow { background-color: #fef9c3; }
+.annual-program__table--course-reg .annual-program__cell--blue { background-color: #dbeafe; }
+.annual-program__table--course-reg .annual-program__cell--gray { background-color: #f3f4f6; }
+
+.annual-program__cell--duration {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.annual-program__table--book-slot .annual-program__cell--orange { background-color: #ffedd5; }
+.annual-program__table--book-slot .annual-program__cell--blue { background-color: #dbeafe; }
+.annual-program__table--book-slot .annual-program__cell--green { background-color: #dcfce7; }
+.annual-program__table--book-slot .annual-program__cell--purple { background-color: #f3e8ff; }
+.annual-program__table--book-slot .annual-program__cell--gray { background-color: #f3f4f6; }
+
+.annual-program__book-link {
+  color: #2563eb;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.annual-program__book-link:hover {
+  text-decoration: underline;
+}
+
+.annual-program__accordion .accordion-button {
+  font-weight: 600;
+  color: #1E2337;
+}
+
+.annual-program__accordion .accordion-button:not(.collapsed) {
+  background-color: #f9fafb;
+}
+
+.annual-program__faq-icon {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1E2337;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 14px;
+}

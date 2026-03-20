@@ -212,7 +212,7 @@
                                                 <div class="col-lg-3">
                                                     <h6 class="mega-menu-title">Get Started</h6>
                                                     <ul class="mega-menu-list">
-                                                        <li><a href="#">Annual Program</a></li>
+                                                        <li><a href="{{ route('annual.program') }}">Annual Program</a></li>
                                                         <li><a href="#">Register To Start Classes</a></li>
                                                     </ul>
                                                 </div>
