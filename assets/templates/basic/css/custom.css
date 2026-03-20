@@ -1135,3 +1135,21 @@ button .spinner-border {
 .other-languages__contact-value a:hover {
   text-decoration: underline;
 }
+
+/* Format Duration page */
+.format-duration__section {
+  background-color: #f9fafb;
+  padding: 28px 32px;
+  border-radius: 12px;
+}
+
+.format-duration__heading {
+  font-weight: 700;
+  color: #1E2337;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+}
+
+.format-duration__body {
+  color: #4b5563;
+  line-height: 1.8;
+}

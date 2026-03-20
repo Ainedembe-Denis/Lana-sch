@@ -143,6 +143,12 @@ class SiteController extends Controller
         return view('Template::other_languages', compact('pageTitle'));
     }
 
+    public function formatDuration()
+    {
+        $pageTitle = 'Format Duration';
+        return view('Template::format_duration', compact('pageTitle'));
+    }
+
     public function courseGermanA1()
     {
         return $this->courseDetail('german-a1');

@@ -410,5 +410,16 @@
             "ugandan_phone_2": "text",
             "ugandan_email": "text"
         }
+    },
+    "format_duration": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Format Duration",
+        "content": {
+            "german_courses_heading": "text",
+            "german_courses_body": "textarea-nic",
+            "other_languages_heading": "text",
+            "other_languages_body": "textarea-nic"
+        }
     }
 }

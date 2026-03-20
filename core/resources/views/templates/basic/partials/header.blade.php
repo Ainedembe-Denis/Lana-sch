@@ -172,23 +172,13 @@
                                                 <div class="col-lg-3">
                                                     <h6 class="mega-menu-title">German Courses</h6>
                                                     @php
-                                                        // Build dropdown from Courses elements (editable in admin/frontend).
                                                         $germanCourseItems = $germanCourses->filter(function ($course) {
                                                             $slug = $course->slug ?: (@$course->data_values->slug ?? null);
                                                             return $slug && strpos($slug, 'german-') === 0;
                                                         })->values();
-
-                                                        $formatDurationHref = '#';
-                                                        foreach ($germanCourseItems as $course) {
-                                                            $slug = $course->slug ?: (@$course->data_values->slug ?? null);
-                                                            if ($slug === 'german-a1') {
-                                                                $formatDurationHref = url('courses/german-a1');
-                                                                break;
-                                                            }
-                                                        }
                                                     @endphp
                                                     <ul class="mega-menu-list">
-                                                        <li><a href="{{ $formatDurationHref }}">Format And Duration</a></li>
+                                                        <li><a href="{{ route('format.duration') }}">Format And Duration</a></li>
                                                         @foreach ($germanCourseItems as $course)
                                                             @php
                                                                 $slug = $course->slug ?: (@$course->data_values->slug ?? null);
@@ -204,7 +194,7 @@
                                                 <div class="col-lg-3">
                                                     <h6 class="mega-menu-title">Other Languages</h6>
                                                     <ul class="mega-menu-list">
-                                                        <li><a href="{{ route('other.languages') }}">Format And Duration</a></li>
+                                                        <li><a href="{{ route('format.duration') }}">Format And Duration</a></li>
                                                         <li><a href="{{ route('other.languages') }}#indo-european">Indo-European Languages</a></li>
                                                         <li><a href="{{ route('other.languages') }}#ugandan-local">Ugandan Local Languages</a></li>
                                                     </ul>
