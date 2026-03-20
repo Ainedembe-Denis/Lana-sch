@@ -1,12 +1,13 @@
 /* Copy Animation */
 
-:root{
+:root {
   --base-h: 221;
   --base-s: 75%;
   --base-l: 60%;
   --base: var(--base-h) var(--base-s) var(--base-l);
-  
+
 }
+
 .base-color {
   color: hsl(var(--base)) !important;
 }
@@ -284,7 +285,7 @@
 }
 
 
-.selection{
+.selection {
   display: block;
 }
 
@@ -296,7 +297,7 @@
   height: 45px !important;
 }
 
-.select2 .dropdown-wrapper{
+.select2 .dropdown-wrapper {
   display: none;
 }
 
@@ -346,7 +347,9 @@
   font-size: 12px;
   margin-bottom: 0px !important;
 }
-.select2-container--open .select2-selection.select2-selection--single, .select2-container--open .select2-selection.select2-selection--multiple {
+
+.select2-container--open .select2-selection.select2-selection--single,
+.select2-container--open .select2-selection.select2-selection--multiple {
   border-color: hsl(var(--base)) !important;
   border-radius: .375rem !important;
 }
@@ -459,7 +462,7 @@
   padding-left: 10px;
 
   &:has(.text) {
-      width: fit-content;
+    width: fit-content;
   }
 }
 
@@ -502,8 +505,8 @@
   border-radius: 5px;
 
   .deposit-info__input-group-text {
-      align-self: center;
-      padding-left: 5px;
+    align-self: center;
+    padding-left: 5px;
   }
 
 }
@@ -560,16 +563,406 @@ button .spinner-border {
   --bs-spinner-width: 1.5rem;
   --bs-spinner-height: 1.5rem;
 }
-.adjust-height .payment-system-list.is-scrollable{
+
+.adjust-height .payment-system-list.is-scrollable {
   max-height: 461px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.btn--base:disabled{
+.btn--base:disabled {
   background-color: hsl(var(--base));
   border-color: hsl(var(--base));
   color: hsl(var(--white));
   opacity: 0.6;
+}
+
+@media all and (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin-top: 0 !important;
+  }
+}
+
+/* Mega Menu Styles */
+@media all and (min-width: 992px) {
+    .has-mega-menu {
+        position: static !important;
+    }
+
+    .has-mega-menu .mega-menu {
+        width: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        padding: 40px !important;
+        border-radius: 20px !important;
+        border: none !important;
+        box-shadow: 0 15px 50px rgba(0,0,0,0.1) !important;
+        background: #fff !important;
+        display: none;
+        transition: all 0.3s ease;
+        top: 100% !important;
+    }
+
+    .has-mega-menu:hover .mega-menu {
+        display: block !important;
+    }
+}
+
+.mega-menu-title {
+    color: #f2a21b; /* Matches the orange in screenshot */
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.mega-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mega-menu-list li {
+    margin-bottom: 12px;
+    border-bottom: 1px dotted #e5e5e5;
+    padding-bottom: 8px;
+}
+
+.mega-menu-list li:last-child {
+    border-bottom: none;
+}
+
+.mega-menu-list li a {
+    color: #444;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: block;
+}
+
+.mega-menu-list li a:hover {
+    color: #f2a21b;
+    padding-left: 5px;
+}
+
+.mega-menu-content p {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.7;
+}
+
+/* Hide default bootstrap caret if we added custom ones */
+.nav-link.dropdown-toggle::after {
+    display: none !important;
+}
+
+/* Mission Statement & Institutional Goals (About page) */
+.mission-goals__title {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #1E2337;
+}
+
+.mission-goals__accent {
+    color: #f2a21b;
+}
+
+.mission-goals__amp {
+    color: #1E2337;
+    opacity: 0.8;
+    padding-inline: 6px;
+}
+
+.mission-goals__heading {
+    font-weight: 800;
+    color: #1E2337;
+    margin-bottom: 8px;
+}
+
+.mission-goals__text {
+    color: #8b93a7;
+    line-height: 1.8;
+}
+
+.mission-goals__list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    color: #8b93a7;
+    line-height: 1.9;
+}
+
+/* Career Guidance (About page) */
+.career-guidance__title {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #1E2337;
+}
+
+.career-guidance__accent {
+    color: #f2a21b;
+}
+
+.career-guidance__subtitle {
+    color: #8b93a7;
+    line-height: 1.8;
+    max-width: 820px;
+    margin-inline: auto;
+}
+
+.career-guidance__item {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.career-guidance__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #1E2337 !important; /* dark blue background */
+    flex: 0 0 64px;
+}
+
+.career-guidance__icon i {
+    font-size: 32px;
+    color: #ffffff; /* keep icon visible on dark blue */
+    line-height: 1;
+}
+
+.career-guidance__heading {
+    font-weight: 800;
+    color: #1E2337;
+    margin-bottom: 6px;
+}
+
+.career-guidance__text {
+    color: #8b93a7;
+    line-height: 1.8;
+}
+
+/* Organizational Structure (About page) */
+.org-structure__title {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #000000;
+}
+
+.org-structure__line {
+    display: block;
+}
+
+.org-structure__accent {
+    color: #000000; /* user request: all words black */
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+.org-structure__subtitle {
+    color: #000000; /* user request: all words black */
+    line-height: 1.8;
+    max-width: 820px;
+    margin-inline: auto;
+}
+
+.org-structure__image {
+    width: 100%;
+    height: auto;
+}
+
+/* About page: reduce vertical gap between stacked sections */
+/* The base theme uses big padding via .section--bottom/.section--sm. */
+.mission-goals.section--bottom,
+.career-guidance.section--bottom {
+    padding-bottom: clamp(20px, 3vw, 30px) !important;
+}
+
+.career-guidance.section--sm,
+.org-structure.section--sm {
+    padding-top: clamp(20px, 3vw, 30px) !important;
+}
+
+/* Login page info section */
+.login-info-box {
+  margin-top: 10px;
+}
+
+.login-info-text {
+  color: #8b93a7;
+  line-height: 1.8;
+}
+
+.login-steps li {
+  color: #8b93a7;
+  line-height: 1.8;
+}
+
+.login-extra-box {
+  border-top: 1px solid #e5e7f0;
+  padding-top: 24px;
+  margin-top: 10px;
+}
+
+.login-extra-heading {
+  font-weight: 700;
+  color: #1E2337;
+}
+
+/* Online Library section */
+.online-library__title {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #1E2337;
+}
+
+.online-library__accent {
+  color: #000000;
+}
+
+.online-library__subtitle {
+  color: #8b93a7;
+  line-height: 1.8;
+  max-width: 820px;
+  margin-inline: auto;
+}
+
+.online-library__heading {
+  font-weight: 700;
+  color: #1E2337;
+}
+
+.online-library__body {
+  color: #8b93a7;
+  line-height: 1.8;
+}
+
+.online-library-grid {
+  margin-top: 10px;
+}
+
+.online-library-card {
+  border-radius: 12px;
+  padding: 24px 22px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+  height: 100%;
+}
+
+.online-library-card__icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #1E2337;
+  margin-bottom: 16px;
+}
+
+.online-library-card__icon i {
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.online-library-card__title {
+  font-weight: 700;
+  color: #1E2337;
+  margin-bottom: 8px;
+}
+
+.online-library-card__text {
+  color: #8b93a7;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.online-library-card__list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  color: #8b93a7;
+  line-height: 1.8;
+}
+
+/* Course detail layout */
+.course-sidebar {
+  background-color: #f9fafb;
+  border-radius: 16px;
+  padding: 18px 16px;
+}
+
+.course-sidebar__title {
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1E2337;
+}
+
+.course-sidebar__list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.course-sidebar__item {
+  margin-bottom: 6px;
+}
+
+.course-sidebar__item a {
+  display: block;
+  padding: 6px 8px;
+  border-radius: 8px;
+  color: #4b5563;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.course-sidebar__item a:hover {
+  background-color: #e5f0ff;
+  color: #1E2337;
+}
+
+.course-sidebar__item--active a {
+  background-color: #1E2337;
+  color: #ffffff;
+}
+
+.course-detail__title {
+  font-weight: 700;
+  color: #1E2337;
+  margin-bottom: 12px;
+}
+
+.course-detail__lead {
+  color: #4b5563;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.course-detail__text {
+  color: #6b7280;
+  line-height: 1.8;
+  margin-top: 10px;
+}
+
+/* Header logo sizing */
+.logo__is {
+  max-height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Footer CTA logo */
+.footer-logo img {
+  max-height: 90px;
+  width: auto;
+  object-fit: contain;
 }
