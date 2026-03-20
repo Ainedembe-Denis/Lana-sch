@@ -145,10 +145,9 @@ class SiteController extends Controller
             ->orderBy('id')
             ->get();
 
-        $course = Frontend::where('data_keys', 'courses.element')
-            ->where('tempname', activeTemplateName())
-            ->where('slug', $courseSlug)
-            ->firstOrFail();
+        // Prefer a course matching the slug; if none exists yet, fall back to the first course
+        $course = $courses->firstWhere('slug', $courseSlug) ?? $courses->first();
+        abort_if(!$course, 404);
 
         // Best-effort title (some courses may not set a title).
         $pageTitle = $course->data_values->title ?? $pageTitle;
