@@ -396,5 +396,19 @@
             "book_url": "text",
             "modal": true
         }
+    },
+    "other_languages": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Other Languages",
+        "content": {
+            "indo_european_heading": "text",
+            "indo_european_body": "textarea-nic",
+            "ugandan_heading": "text",
+            "ugandan_body": "textarea-nic",
+            "ugandan_phone_1": "text",
+            "ugandan_phone_2": "text",
+            "ugandan_email": "text"
+        }
     }
 }

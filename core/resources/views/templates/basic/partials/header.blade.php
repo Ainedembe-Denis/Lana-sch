@@ -204,9 +204,9 @@
                                                 <div class="col-lg-3">
                                                     <h6 class="mega-menu-title">Other Languages</h6>
                                                     <ul class="mega-menu-list">
-                                                        <li><a href="#">Format And Duration</a></li>
-                                                        <li><a href="#">Indo-European Languages</a></li>
-                                                        <li><a href="#">Ugandan Local Languages</a></li>
+                                                        <li><a href="{{ route('other.languages') }}">Format And Duration</a></li>
+                                                        <li><a href="{{ route('other.languages') }}#indo-european">Indo-European Languages</a></li>
+                                                        <li><a href="{{ route('other.languages') }}#ugandan-local">Ugandan Local Languages</a></li>
                                                     </ul>
                                                 </div>
                                                 <div class="col-lg-3">

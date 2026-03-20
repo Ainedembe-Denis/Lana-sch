@@ -27,6 +27,7 @@ Route::controller('SiteController')->group(function () {
     Route::post('/contact', 'contactSubmit');
     Route::get('/online-library', 'onlineLibrary')->name('online.library');
     Route::get('/annual-program', 'annualProgram')->name('annual.program');
+    Route::get('/other-languages', 'otherLanguages')->name('other.languages');
     Route::get('/courses/{courseSlug}', 'courseDetail')->name('courses.detail');
     Route::get('/courses/german-a1', 'courseGermanA1')->name('courses.german.a1');
     Route::get('/change/{lang?}', 'changeLanguage')->name('lang');

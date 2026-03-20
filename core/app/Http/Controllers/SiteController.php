@@ -137,6 +137,12 @@ class SiteController extends Controller
         return view('Template::annual_program', compact('pageTitle'));
     }
 
+    public function otherLanguages()
+    {
+        $pageTitle = 'Other Languages';
+        return view('Template::other_languages', compact('pageTitle'));
+    }
+
     public function courseGermanA1()
     {
         return $this->courseDetail('german-a1');
