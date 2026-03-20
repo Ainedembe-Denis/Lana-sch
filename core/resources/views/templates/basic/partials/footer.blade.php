@@ -61,7 +61,12 @@
                         @if (@$pages)
                             @foreach ($pages as $k => $data)
                                 <li class="list--column__item">
-                                    <a href="{{ route('pages', [$data->slug]) }}" class="t-link t-link--primary t-text-white text-capitalize">{{ __($data->name) }}</a>
+                                    @php
+                                        $href = (stripos(__($data->name), 'Course') !== false || $data->slug == 'courses')
+                                            ? url('courses/german-a1-beginner')
+                                            : route('pages', [$data->slug]);
+                                    @endphp
+                                    <a href="{{ $href }}" class="t-link t-link--primary t-text-white text-capitalize">{{ __($data->name) }}</a>
                                 </li>
                             @endforeach
                         @endif
