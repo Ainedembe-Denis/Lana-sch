@@ -665,16 +665,16 @@ button .spinner-border {
 .mission-goals__title {
     font-weight: 800;
     letter-spacing: -0.02em;
-    color: #1E2337;
+    color: #000000; /* user request: all title words black */
 }
 
 .mission-goals__accent {
-    color: #f2a21b;
+    color: #000000; /* user request: keep accent part black */
 }
 
 .mission-goals__amp {
-    color: #1E2337;
-    opacity: 0.8;
+    color: #000000;
+    opacity: 1;
     padding-inline: 6px;
 }
 
