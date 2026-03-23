@@ -955,9 +955,54 @@ button .spinner-border {
 
 /* Header logo sizing */
 .logo__is {
-  max-height: 42px;
+  max-height: 180px !important;
   width: auto;
   object-fit: contain;
+}
+
+@media (max-width: 991px) {
+  .logo__is {
+    max-height: 140px !important;
+  }
+}
+
+/* Make the header logo area transparent (no white bar), but keep
+   the navigation/links area as the white banner */
+@media (min-width: 992px) {
+  .navbar {
+    background: transparent !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* This wrapper contains the page links (Home/Courses/About/etc). */
+  .navbar-collapse {
+    background: #fff !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Avoid reserving extra space next to the enlarged logo. */
+  .logo {
+    margin-right: 0 !important;
+    width: auto !important;
+    max-width: none !important;
+    flex: 0 0 auto !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Remove edge padding before the first menu item ("Home"). */
+  .nav-menu .nav-item:first-child {
+    padding-left: 0 !important;
+  }
+
+  /* Push the main nav links toward the right side of the banner. */
+  .navbar-collapse .nav-menu {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center !important;
+    width: fit-content !important;
+  }
 }
 
 /* Footer CTA logo */
