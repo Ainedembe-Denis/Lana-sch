@@ -193,13 +193,20 @@ function getTemplates()
 
 function getPageSections($arr = false)
 {
-    $jsonUrl = resource_path('views/') . str_replace('.', '/', activeTemplate()) . 'sections.json';
-    $sections = json_decode(file_get_contents($jsonUrl));
-    if ($arr) {
-        $sections = json_decode(file_get_contents($jsonUrl), true);
-        ksort($sections);
-    }
-    return $sections;
+    $template = activeTemplate();
+    $jsonUrl = resource_path('views/') . str_replace('.', '/', $template) . 'sections.json';
+    $mtime = file_exists($jsonUrl) ? filemtime($jsonUrl) : 0;
+    $cacheKey = 'sections_json_' . str_replace('.', '_', $template) . '_' . $mtime . '_' . ($arr ? '1' : '0');
+
+    return Cache::remember($cacheKey, 86400, function () use ($jsonUrl, $arr) {
+        $raw = file_get_contents($jsonUrl);
+        if ($arr) {
+            $sections = json_decode($raw, true);
+            ksort($sections);
+            return $sections;
+        }
+        return json_decode($raw);
+    });
 }
 
 
@@ -326,23 +333,25 @@ function showDateTime($date, $format = 'Y-m-d h:i A')
 }
 
 
-function getContent($dataKeys, $singleQuery = false, $limit = null, $orderById = false) {
+function forgetFrontendContentCache() {
+    Cache::put('frontend_updated_at', time());
+}
 
+function getContent($dataKeys, $singleQuery = false, $limit = null, $orderById = false) {
     $templateName = activeTemplateName();
-    if ($singleQuery) {
-        $content = Frontend::where('tempname', $templateName)->where('data_keys', $dataKeys)->orderBy('id', 'desc')->first();
-    } else {
-        $article = Frontend::where('tempname', $templateName);
+    $gen = Cache::get('frontend_updated_at', 0);
+    $cacheKey = 'fc_' . $gen . '_' . $templateName . '_' . str_replace('.', '_', $dataKeys) . '_' . ($singleQuery ? '1' : '0') . '_' . ($limit ?? 'n') . '_' . ($orderById ? '1' : '0');
+
+    return Cache::remember($cacheKey, 3600, function () use ($templateName, $dataKeys, $singleQuery, $limit, $orderById) {
+        if ($singleQuery) {
+            return Frontend::where('tempname', $templateName)->where('data_keys', $dataKeys)->orderBy('id', 'desc')->first();
+        }
+        $article = Frontend::where('tempname', $templateName)->where('data_keys', $dataKeys);
         $article->when($limit != null, function ($q) use ($limit) {
             return $q->limit($limit);
         });
-        if ($orderById) {
-            $content = $article->where('data_keys', $dataKeys)->orderBy('id')->get();
-        } else {
-            $content = $article->where('data_keys', $dataKeys)->orderBy('id', 'desc')->get();
-        }
-    }
-    return $content;
+        return $orderById ? $article->orderBy('id')->get() : $article->orderBy('id', 'desc')->get();
+    });
 }
 
 function verifyG2fa($user, $code, $secret = null)

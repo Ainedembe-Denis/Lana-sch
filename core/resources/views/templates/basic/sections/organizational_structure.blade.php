@@ -27,6 +27,7 @@
                     src="{{ asset('assets/images/logo_icon/organisation.png') }}"
                     alt="@lang('Organizational structure')"
                     class="img-fluid org-structure__image"
+                    loading="lazy"
                 />
             </div>
         </div>

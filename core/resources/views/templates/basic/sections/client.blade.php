@@ -9,7 +9,7 @@
                 <div class="client-slider">
                     @foreach ($clients as $client)
                         <div class="client-slider__item">
-                            <img src="{{ frontendImage('client', @$client->data_values->image, '100x100') }}" alt="@lang('client')" class="img-fluid mx-auto" />
+                            <img src="{{ frontendImage('client', @$client->data_values->image, '100x100') }}" alt="@lang('client')" class="img-fluid mx-auto" loading="lazy" />
                         </div>
                     @endforeach
                 </div>

@@ -23,7 +23,7 @@
             </div>
             <div class="col-lg-6 col-xl-7 d-none d-lg-block">
                 <img src="{{ frontendImage('about', @$aboutContent->data_values->image, '750x550') }}"
-                    class="img-fluid radious-5" />
+                    class="img-fluid radious-5" loading="lazy" alt="" />
             </div>
         </div>
     </div>

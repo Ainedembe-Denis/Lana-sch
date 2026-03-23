@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row justify-content-center align-items-lg-center justify-content-xl-between">
             <div class="col-lg-5 col-xl-6 col-xxl-7 d-none d-lg-block">
-                <img src="{{ frontendImage('feature', @$featureContent->data_values->image, '715x710') }}"
+                <img src="{{ frontendImage('feature', @$featureContent->data_values->image, '715x710') }}" loading="lazy"
                     class="img-fluid radious-5" />
             </div>
             <div class="col-md-12 col-lg-7 col-xl-6 col-xxl-5">

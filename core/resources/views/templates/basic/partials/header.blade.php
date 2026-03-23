@@ -1,9 +1,6 @@
 @php
     $contactContent = getContent('contact.content', true);
-    $germanCourses = \App\Models\Frontend::where('data_keys', 'courses.element')
-        ->where('tempname', activeTemplateName())
-        ->orderBy('id')
-        ->get();
+    $germanCourses = getContent('courses.element', false, null, true);
 @endphp
 
 <section class="top-header">

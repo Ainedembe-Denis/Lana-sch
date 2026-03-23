@@ -18,8 +18,8 @@
     </div>
 
     @push('frontend-script')
-        <script src="{{ asset($activeTemplateTrue . 'js/jquery.nice-select.js') }}"></script>
-        <script src="{{ asset($activeTemplateTrue . 'js/slick.js') }}"></script>
-        <script src="{{ asset($activeTemplateTrue . 'js/app.js') }}"></script>
+        <script src="{{ asset($activeTemplateTrue . 'js/jquery.nice-select.js') }}" defer></script>
+        <script src="{{ asset($activeTemplateTrue . 'js/slick.js') }}" defer></script>
+        <script src="{{ asset($activeTemplateTrue . 'js/app.js') }}" defer></script>
     @endpush
 @endsection

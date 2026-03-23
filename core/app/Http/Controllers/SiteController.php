@@ -51,6 +51,12 @@ class SiteController extends Controller
         return view('Template::contact', compact('pageTitle', 'user', 'sections', 'seoContents', 'seoImage'));
     }
 
+    public function faq()
+    {
+        $pageTitle = 'FAQs';
+        return view('Template::faq', compact('pageTitle'));
+    }
+
     public function contactSubmit(Request $request)
     {
         $request->validate([

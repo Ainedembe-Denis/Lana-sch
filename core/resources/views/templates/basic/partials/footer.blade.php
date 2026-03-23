@@ -75,6 +75,11 @@
                                 @lang('Contact Us')
                             </a>
                         </li>
+                        <li class="list--column__item">
+                            <a href="{{ route('faq') }}" class="t-link t-link--primary t-text-white text-capitalize">
+                                @lang('FAQs')
+                            </a>
+                        </li>
 
                     </ul>
                 </div>
