@@ -106,6 +106,12 @@ class SiteController extends Controller
     public function policyPages($slug)
     {
         $policy      = Frontend::where('slug', $slug)->where('data_keys', 'policy_pages.element')->firstOrFail();
+
+        // The "Rapid Policy" page is removed from the public site.
+        if (isset($policy->data_values->title) && preg_match('/rapid\s*policy/i', (string) $policy->data_values->title)) {
+            abort(404);
+        }
+
         $pageTitle   = @$policy->data_values->title;
         $seoContents = $policy->seo_content;
         $seoImage    = @$seoContents->image ? frontendImage('policy_pages', $seoContents->image, getFileSize('seo'), true) : null;

@@ -87,6 +87,13 @@
                     <h4 class="mt-0 t-text-white text-capitalize">@lang('Quick Link')</h4>
                     <ul class="list list--column">
                         @foreach ($policyPages as $link)
+                            @php
+                                $policyTitle = strtolower(trim((string) (@$link->data_values->title ?? '')));
+                                $policySlug = strtolower(trim((string) (@$link->slug ?? '')));
+                            @endphp
+                            @if (stripos($policyTitle, 'rapid policy') !== false || stripos($policySlug, 'rapid') !== false)
+                                @continue
+                            @endif
                             <li class="list--column__item">
                                 <a class="t-link t-link--primary t-text-white text-capitalize" href="{{ route('policy.pages',$link->slug) }}">{{ __(@$link->data_values->title) }}</a>
                             </li>
