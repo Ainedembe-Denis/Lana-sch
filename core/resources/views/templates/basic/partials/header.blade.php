@@ -111,9 +111,9 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a href="{{ route('home') }}" class="logo">
-                <img src="{{ siteLogo() }}" alt="viserhyip" class="img-fluid logo__is" />
+                <img src="{{ siteLogo() }}" alt="Lana" class="img-fluid logo__is" />
             </a>
-            <button class="navbar-toggler header-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler header-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span id="hiddenNav"><i class="las la-bars"></i></span>
             </button>
 
