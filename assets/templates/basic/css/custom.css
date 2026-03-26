@@ -589,22 +589,33 @@ button .spinner-border {
 
 /* Mega Menu Styles */
 @media all and (min-width: 992px) {
+    .header {
+        overflow: visible;
+    }
+
+    .navbar-nav {
+        position: relative;
+    }
+
     .has-mega-menu {
         position: static !important;
     }
 
     .has-mega-menu .mega-menu {
-        width: 100% !important;
-        left: 0 !important;
-        right: 0 !important;
-        padding: 40px !important;
-        border-radius: 20px !important;
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: min(1160px, calc(100vw - 40px)) !important;
+        padding: 30px 40px !important;
+        border-radius: 0 !important;
         border: none !important;
-        box-shadow: 0 15px 50px rgba(0,0,0,0.1) !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
         background: #fff !important;
         display: none;
         transition: all 0.3s ease;
-        top: 100% !important;
+        top: calc(100% + 5px) !important;
+        margin-top: 0 !important;
+        z-index: 1000 !important;
     }
 
     .has-mega-menu:hover .mega-menu {
