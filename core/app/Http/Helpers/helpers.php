@@ -85,8 +85,10 @@ function verifyCaptcha()
 
 function loadExtension($key)
 {
-    $extension = Extension::where('act', $key)->where('status', Status::ENABLE)->first();
-    return $extension ? $extension->generateScript() : '';
+    return \Illuminate\Support\Facades\Cache::remember('extension_' . $key, 3600, function () use ($key) {
+        $extension = Extension::where('act', $key)->where('status', Status::ENABLE)->first();
+        return $extension ? $extension->generateScript() : '';
+    });
 }
 
 function getTrx($length = 12)
