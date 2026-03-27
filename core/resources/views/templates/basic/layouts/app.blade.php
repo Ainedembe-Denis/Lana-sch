@@ -30,7 +30,7 @@
 
 <body>
     <div class="preloader">
-        <div class="animated-preloader"></div>s
+        <div class="animated-preloader"></div>
     </div>
     <div class="body-overlay" id="body-overlay"></div>
 

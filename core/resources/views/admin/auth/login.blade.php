@@ -8,9 +8,9 @@
                 <div class="login-area">
                     <div class="login-wrapper">
                         <div class="login-wrapper__top">
-                            <h3 class="title text-white">@lang('Welcome to') <strong>{{ __(gs('site_name')) }}</strong></h3>
-                            <p class="text-white">{{ __($pageTitle) }} @lang('to') {{ __(gs('site_name')) }}
-                                @lang('Dashboard')</p>
+                            <div class="text-center mb-3">
+                                <img src="{{ siteLogo() }}" alt="{{ __(gs('site_name')) }}" class="img-fluid" style="max-width: 150px;">
+                            </div>
                         </div>
                         <div class="login-wrapper__body">
                             <form action="{{ route('admin.login') }}" method="POST"
