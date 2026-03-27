@@ -121,7 +121,7 @@
     <div class="footer-copyright">
         <p class="mb-0 t-text-white text-center text-capitalize">
             &copy; {{ date('Y') }}
-            <a class="base--text" href="{{ route('home') }}">{{ __(gs('site_name')) }}</a>
+            <a class="base--text" href="{{ route('home') }}">Lana Language Centre</a>
             @lang('All Rights Reserved').
         </p>
     </div>
