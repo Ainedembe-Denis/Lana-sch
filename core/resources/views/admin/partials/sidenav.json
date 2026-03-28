@@ -62,7 +62,6 @@
         "title": "Extra",
         "icon": "la la-server",
         "menu_active": "admin.system*",
-        "counters": ["updateAvailable"],
         "submenu": [{
                 "keyword": ["Application", "System", "Application management", "Application settings", "System information", "version", "laravel", "timezone"],
                 "title": "Application",
@@ -80,13 +79,6 @@
                 "title": "Cache",
                 "route_name": "admin.system.optimize",
                 "menu_active": "admin.system.optimize"
-            },
-            {
-                "keyword": ["Update", "System", "Update management", "System update", "Software updates", "version update", "upgrade", "latest version"],
-                "title": "Update",
-                "route_name": "admin.system.update",
-                "menu_active": "admin.system.update*",
-                "counter": "updateAvailable"
             }
         ]
     }
