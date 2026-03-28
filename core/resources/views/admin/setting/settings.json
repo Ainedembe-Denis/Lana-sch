@@ -104,21 +104,6 @@
         "icon": "las la-bell",
         "route_name": "admin.setting.notification.global.email"
     },
-    "seo_configuration": {
-        "keyword": [
-            "SEO",
-            "meta title",
-            "meta description",
-            "meta keywords",
-            "optimization",
-            "meta tags",
-            "SEO configuration"
-        ],
-        "title": "SEO Configuration",
-        "subtitle": "Configure proper meta title, meta description, meta keywords, etc to make the system SEO-friendly.",
-        "icon": "las la-globe",
-        "route_name": "admin.seo"
-    },
     "manage_frontend": {
         "keyword": [
             "frontend",

@@ -55,52 +55,7 @@
                 "title": "Templates",
                 "route_name": "admin.frontend.templates",
                 "menu_active": "admin.frontend.templates"
-            },
-            {
-                "keyword": ["SEO", "seo configuration", "meta tags"],
-                "title": "SEO Configuration",
-                "route_name": "admin.seo",
-                "menu_active": "admin.seo"
             }
-        ]
-    },
-    "system_setting": {
-        "keyword": ["System Setting", "setting", "System configuration", "System preferences", "Configuration management", "System setup"],
-        "title": "System Setting",
-        "icon": "las la-life-ring",
-        "route_name": "admin.setting.system",
-        "menu_active": [
-            "admin.setting.system",
-            "admin.setting.general",
-            "admin.setting.socialite.credentials",
-            "admin.cron*",
-            "admin.setting.system.configuration",
-            "admin.setting.logo.icon",
-            "admin.extensions.index",
-            "admin.language.manage",
-            "admin.language.key",
-            "admin.seo",
-            "admin.kyc.setting",
-            "admin.frontend.templates",
-            "admin.frontend.manage.*",
-            "admin.maintenance.mode",
-            "admin.setting.cookie",
-            "admin.setting.custom.css",
-            "admin.setting.sitemap",
-            "admin.setting.robot",
-            "admin.setting.notification.global.email",
-            "admin.setting.notification.global.sms",
-            "admin.setting.notification.global.push",
-            "admin.setting.notification.email",
-            "admin.setting.notification.sms",
-            "admin.setting.notification.push",
-            "admin.setting.notification.templates",
-            "admin.setting.notification.template.edit",
-            "admin.frontend.index",
-            "admin.frontend.sections*",
-            "admin.gateway*",
-            "admin.withdraw.method*",
-            "admin.setting.app.purchase"
         ]
     },
     "extra": {
@@ -134,12 +89,5 @@
                 "counter": "updateAvailable"
             }
         ]
-    },
-    "report_and_request": {
-        "keyword": ["Report & Request", "Report and Request", "Reports and Requests", "Reporting and Requests", "Report management", "Request management", "feature request", "bug report"],
-        "title": "Report & Request",
-        "icon": "las la-bug",
-        "route_name": "admin.request.report",
-        "menu_active": "admin.request.report"
     }
 }

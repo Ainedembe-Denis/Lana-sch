@@ -41,9 +41,6 @@ Route::middleware('admin')->group(function () {
         Route::post('notifications/delete-all','deleteAllNotification')->name('notifications.delete.all');
         Route::post('notifications/delete-single/{id}','deleteSingleNotification')->name('notifications.delete.single');
 
-        //Report Bugs
-        Route::get('request-report','requestReport')->name('request.report');
-        Route::post('request-report','reportSubmit');
 
         Route::get('download-attachments/{file_hash}', 'downloadAttachment')->name('download.attachment');
     });
@@ -177,8 +174,6 @@ Route::middleware('admin')->group(function () {
     });
 
 
-    // SEO
-    Route::get('seo', 'FrontendController@seoEdit')->name('seo');
 
 
     // Frontend
@@ -207,8 +202,6 @@ Route::middleware('admin')->group(function () {
             Route::get('manage-section/{id}', 'manageSection')->name('manage.section');
             Route::post('manage-section/{id}', 'manageSectionUpdate')->name('manage.section.update');
 
-            Route::get('manage-seo/{id}','manageSeo')->name('manage.pages.seo');
-            Route::post('manage-seo/{id}','manageSeoStore');
         });
 
     });

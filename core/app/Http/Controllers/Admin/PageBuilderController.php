@@ -113,38 +113,4 @@ class PageBuilderController extends Controller
     }
 
 
-    public function manageSeo($id){
-        $page = Page::findOrFail($id);
-        $pageTitle = 'SEO Configuration for '.$page->name .' Page';
-        return view('admin.frontend.builder.seo', compact('pageTitle','page'));
-    }
-
-    public function manageSeoStore(Request $request, $id){
-        $request->validate([
-            'image'=>['nullable',new FileTypeValidate(['jpeg', 'jpg', 'png'])]
-        ]);
-
-        $page = Page::findOrFail($id);
-        $image = @$page->seo_content->image;
-        if ($request->hasFile('image')) {
-            try {
-                $path = getFilePath('seo');
-                $image = fileUploader($request->image,$path, getFileSize('seo'), @$page->seo_content->image);
-            } catch (\Exception $exp) {
-                $notify[] = ['error', 'Couldn\'t upload the image'];
-                return back()->withNotify($notify);
-            }
-        }
-        $page->seo_content = [
-            'image'=>$image,
-            'description'=>$request->description,
-            'social_title'=>$request->social_title,
-            'social_description'=>$request->social_description,
-            'keywords'=>$request->keywords ,
-        ];
-        $page->save();
-
-        $notify[] = ['success', 'SEO content updated successfully'];
-        return back()->withNotify($notify);
-    }
 }

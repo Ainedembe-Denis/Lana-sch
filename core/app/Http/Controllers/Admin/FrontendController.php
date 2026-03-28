@@ -43,20 +43,6 @@ class FrontendController extends Controller
         return back()->withNotify($notify);
     }
 
-    public function seoEdit()
-    {
-        $pageTitle = 'SEO Configuration';
-        $seo = Frontend::where('data_keys', 'seo.data')->first();
-        if(!$seo){
-            $data_values = '{"keywords":[],"description":"","social_title":"","social_description":"","image":null}';
-            $data_values = json_decode($data_values, true);
-            $frontend = new Frontend();
-            $frontend->data_keys = 'seo.data';
-            $frontend->data_values = $data_values;
-            $frontend->save();
-        }
-        return view('admin.frontend.seo', compact('pageTitle', 'seo'));
-    }
 
 
 
