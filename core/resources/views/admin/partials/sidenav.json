@@ -26,13 +26,6 @@
         "route_name": "admin.dashboard",
         "menu_active": "admin.dashboard"
     },
-    "subscriber": {
-        "keyword": ["subscriber", "subscribers", "Subscription management", "Subscriber list", "Subscriber activity"],
-        "title": "Subscribers",
-        "icon": "las la-thumbs-up",
-        "route_name": "admin.subscriber.index",
-        "menu_active": "admin.subscriber.*"
-    },
     "frontend": {
         "keyword": ["frontend", "website", "template", "manage frontend", "frontend contents", "pages", "sections", "banner", "about", "contact", "blog", "faq"],
         "title": "Frontend",
