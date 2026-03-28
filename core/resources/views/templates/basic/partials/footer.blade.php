@@ -25,8 +25,8 @@
                                 </p>
                             </li>
                             <li class="list--row__item">
-                                <a href="{{ @$ctaContent->data_values->button_link }}" class="btn btn--base text-capitalize">
-                                    {{ __(@$ctaContent->data_values->button_name) }}</a>
+                                <a href="{{ route('user.login') }}" class="btn btn--base text-capitalize">
+                                    Apply Now</a>
                             </li>
                         </ul>
                     </div>

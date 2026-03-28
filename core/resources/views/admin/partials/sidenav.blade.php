@@ -7,7 +7,7 @@
     <div class="sidebar__inner">
         <div class="sidebar__logo">
             <a href="{{route('admin.dashboard')}}" class="sidebar__main-logo">
-                <img src="{{siteLogo('dark')}}" alt="image" style="object-fit: contain; object-position: top; max-height: 50px; width: auto;">
+                <img src="{{siteLogo()}}" alt="image">
             </a>
         </div>
         <div class="sidebar__menu-wrapper">
@@ -86,12 +86,8 @@
 @push('style')
     <style>
         .sidebar__logo .sidebar__main-logo img {
-            object-fit: contain;
-            object-position: top center;
-            max-height: 50px !important;
+            max-height: 100px;
             width: auto;
-            clip-path: inset(0 0 40% 0);
-            -webkit-clip-path: inset(0 0 40% 0);
         }
     </style>
 @endpush
