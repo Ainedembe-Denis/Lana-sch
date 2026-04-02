@@ -7,9 +7,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <ul class="list list--row d-flex align-items-center">
-                    <li class="list--row__item">
-                        <ul class="list vf-info-list">
+                <ul class="list list--row d-flex align-items-center position-relative w-100" style="min-height: 40px;">
+                    <li class="list--row__item mx-auto">
+                        <ul class="list vf-info-list d-flex justify-content-center m-0 p-0">
                             <li class="vf-info-list__item">
                                 <div class="d-flex">
                                     <div class="flex-shrink-0">
@@ -57,43 +57,9 @@
                         </ul>
                     </li>
 
-                    @if (gs('multi_language'))
-                        @php
-                            $language = App\Models\Language::all();
-                            $currentLang = session('lang') ? $language->where('code', session('lang'))->first() : $language->where('is_default', Status::YES)->first();
-                        @endphp
-
-                        <li class="ms-auto">
-                            <div class="language dropdown">
-
-                                <button class="language-wrapper" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <div class="language-content">
-                                        <div class="language_flag">
-                                            <img src="{{ getImage(getFilePath('language') . '/' . @$currentLang->image, getFileSize('language')) }}" alt="flag">
-                                        </div>
-                                        <p class="language_text_select">{{ __(@$currentLang->name) }}</p>
-                                    </div>
-                                    <span class="collapse-icon"><i class="las la-angle-down"></i></span>
-                                </button>
-
-                                <div class="dropdown-menu langList_dropdow py-2">
-                                    <ul class="langList">
-                                        @foreach ($language as $item)
-                                            @if (session('lang') != $item->code)
-                                                <li class="language-list languageList" data-code="{{ $item->code }}">
-                                                    <div class="language_flag">
-                                                        <img src="{{ getImage(getFilePath('language') . '/' . $item->image, getFileSize('language')) }}" alt="flag">
-                                                    </div>
-                                                    <p class="language_text">{{ __($item->name) }}</p>
-                                                </li>
-                                            @endif
-                                        @endforeach
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    @endif
+                    <li class="position-absolute end-0 d-flex align-items-center" style="top: 50%; transform: translateY(-50%); pe-3">
+                        <img src="https://flagcdn.com/w40/ug.png" alt="Uganda" style="width: 35px; height: auto; border-radius: 2px;">
+                    </li>
                 </ul>
             </div>
         </div>
@@ -114,36 +80,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-menu align-items-lg-center">
 
-                    @if (gs('multi_language'))
-                        <li class="d-lg-none">
-                            <div class="language dropdown sm-screen">
-                                <button class="language-wrapper" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <div class="language-content">
-                                        <div class="language_flag">
-                                            <img src="{{ getImage(getFilePath('language') . '/' . @$currentLang->image, getFileSize('language')) }}" alt="flag">
-                                        </div>
-                                        <p class="language_text_select">{{ __(@$currentLang->name) }}</p>
-                                    </div>
-                                    <span class="collapse-icon"><i class="las la-angle-down"></i></span>
-                                </button>
 
-                                <div class="dropdown-menu langList_dropdow py-2">
-                                    <ul class="langList">
-                                        @foreach ($language as $item)
-                                            @if (session('lang') != $item->code)
-                                                <li class="language-list languageList" data-code="{{ $item->code }}">
-                                                    <div class="language_flag">
-                                                        <img src="{{ getImage(getFilePath('language') . '/' . $item->image, getFileSize('language')) }}" alt="flag">
-                                                    </div>
-                                                    <p class="language_text">{{ __($item->name) }}</p>
-                                                </li>
-                                            @endif
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    @endif
                     <li class="nav-item">
                         <a class="nav-link {{ menuActive('home') }}" aria-current="page" href="{{ route('home') }}">@lang('Home')</a>
                     </li>
