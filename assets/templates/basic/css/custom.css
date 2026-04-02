@@ -589,6 +589,10 @@ button .spinner-border {
 
 /* Mega Menu Styles */
 @media all and (min-width: 992px) {
+    .navbar-collapse {
+        position: relative !important;
+    }
+
     .has-mega-menu {
         position: static !important;
     }
@@ -598,13 +602,17 @@ button .spinner-border {
         left: 0 !important;
         right: 0 !important;
         padding: 40px !important;
-        border-radius: 20px !important;
+        border-radius: 0 0 20px 20px !important;
+        margin-top: 0 !important;
         border: none !important;
+        border-top: 1px solid #f1f1f1 !important;
         box-shadow: 0 15px 50px rgba(0,0,0,0.1) !important;
         background: #fff !important;
         display: none;
         transition: all 0.3s ease;
         top: 100% !important;
+        transform: none !important; /* Ignore Popper.js dynamic positioning */
+        margin: 0 !important; /* Reset any margin injected by Popper */
     }
 
     .has-mega-menu:hover .mega-menu {
