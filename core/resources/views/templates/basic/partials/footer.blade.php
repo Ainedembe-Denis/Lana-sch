@@ -25,8 +25,8 @@
                                 </p>
                             </li>
                             <li class="list--row__item">
-                                <a href="{{ route('user.login') }}" class="btn btn--base text-capitalize">
-                                    Apply Now</a>
+                                <a href="{{ @$ctaContent->data_values->button_link }}" class="btn btn--base text-capitalize">
+                                    {{ __(@$ctaContent->data_values->button_name) }}</a>
                             </li>
                         </ul>
                     </div>
@@ -121,7 +121,7 @@
     <div class="footer-copyright">
         <p class="mb-0 t-text-white text-center text-capitalize">
             &copy; {{ date('Y') }}
-            <a class="base--text" href="{{ route('home') }}">Lana Language Centre</a>
+            <a class="base--text" href="{{ route('home') }}">{{ __(gs('site_name')) }}</a>
             @lang('All Rights Reserved').
         </p>
     </div>

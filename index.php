@@ -48,6 +48,14 @@ $app = require_once __DIR__.'/core/bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
 
+// Fix case-sensitivity issues on Windows/XAMPP subdirectories
+if (isset($_SERVER['REQUEST_URI']) && isset($_SERVER['SCRIPT_NAME'])) {
+    $scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'])); 
+    if ($scriptDir !== '/' && stripos($_SERVER['REQUEST_URI'], $scriptDir) === 0) {
+        $_SERVER['REQUEST_URI'] = $scriptDir . substr($_SERVER['REQUEST_URI'], strlen($scriptDir));
+    }
+}
+
 $response = $kernel->handle(
     $request = Request::capture()
 )->send();

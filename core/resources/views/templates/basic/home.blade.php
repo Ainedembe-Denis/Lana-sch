@@ -12,9 +12,9 @@
                         <h1 class="hero__content-title text-capitalize t-text-white">
                             {{ __(@$bannerContent->data_values->heading) }}
                         </h1>
-                        <a href="{{ route('user.login') }}"
+                        <a href="{{ @$bannerContent->data_values->button_link }}"
                             class="btn btn--xl xl-text btn--base btn--outline mt-3">
-                            Apply Now
+                            {{ __(@$bannerContent->data_values->button_name) }}
                         </a>
                     </div>
                 </div>

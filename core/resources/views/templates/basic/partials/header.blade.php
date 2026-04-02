@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <ul class="list list--row d-flex align-items-center justify-content-center position-relative">
+                <ul class="list list--row d-flex align-items-center">
                     <li class="list--row__item">
                         <ul class="list vf-info-list">
                             <li class="vf-info-list__item">
@@ -57,13 +57,7 @@
                         </ul>
                     </li>
 
-                    <li class="list--row__item top-header-flag-item">
-                        <div class="d-flex align-items-center" style="gap: .25rem;">
-                            <img src="https://flagcdn.com/w40/ug.png" srcset="https://flagcdn.com/w80/ug.png 2x" alt="Uganda flag" style="height:24px; width:auto; border-radius:2px;">
-                        </div>
-                    </li>
-
-                    @if (false)
+                    @if (gs('multi_language'))
                         @php
                             $language = App\Models\Language::all();
                             $currentLang = session('lang') ? $language->where('code', session('lang'))->first() : $language->where('is_default', Status::YES)->first();
@@ -111,16 +105,16 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a href="{{ route('home') }}" class="logo">
-                <img src="{{ siteLogo() }}" alt="Lana" class="img-fluid logo__is" />
+                <img src="{{ siteLogo() }}" alt="viserhyip" class="img-fluid logo__is" />
             </a>
-            <button class="navbar-toggler header-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler header-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span id="hiddenNav"><i class="las la-bars"></i></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-menu align-items-lg-center">
 
-                    @if (false)
+                    @if (gs('multi_language'))
                         <li class="d-lg-none">
                             <div class="language dropdown sm-screen">
                                 <button class="language-wrapper" data-bs-toggle="dropdown" aria-expanded="false">
