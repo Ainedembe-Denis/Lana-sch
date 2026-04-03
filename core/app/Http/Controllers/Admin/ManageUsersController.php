@@ -319,7 +319,7 @@ class ManageUsersController extends Controller
 
         if (!gs('en') && !gs('sn') && !gs('pn')) {
             $notify[] = ['warning', 'Notification options are disabled currently'];
-            return to_route('admin.dashboard')->withNotify($notify);
+            return to_route('admin.frontend.index')->withNotify($notify);
         }
 
         $imageUrl = null;
@@ -346,7 +346,7 @@ class ManageUsersController extends Controller
     {
         if (!gs('en') && !gs('sn') && !gs('pn')) {
             $notify[] = ['warning', 'Notification options are disabled currently'];
-            return to_route('admin.dashboard')->withNotify($notify);
+            return to_route('admin.frontend.index')->withNotify($notify);
         }
 
         $notifyToUser = User::notifyToUser();
@@ -380,7 +380,7 @@ class ManageUsersController extends Controller
 
         if (!gs('en') && !gs('sn') && !gs('pn')) {
             $notify[] = ['warning', 'Notification options are disabled currently'];
-            return to_route('admin.dashboard')->withNotify($notify);
+            return to_route('admin.frontend.index')->withNotify($notify);
         }
 
 

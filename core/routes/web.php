@@ -34,6 +34,10 @@ Route::controller('SiteController')->group(function () {
     Route::get('/courses/german-a1', 'courseGermanA1')->name('courses.german.a1');
     Route::get('/change/{lang?}', 'changeLanguage')->name('lang');
 
+    
+// Registration page
+    Route::get('/register',  'register')->name('register');
+
     Route::get('cookie-policy', 'cookiePolicy')->name('cookie.policy');
 
     Route::get('/cookie/accept', 'cookieAccept')->name('cookie.accept');

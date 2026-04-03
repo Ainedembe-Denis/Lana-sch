@@ -11,11 +11,10 @@
                     <div class="text-center">
                         <div class="d-flex align-items-center justify-content-center">
                             <p class="mb-0 text-capitalize text--primary xxl-text">
-                                {{ __(@$blogContent->data_values->subheading) }}
+                                {{ __(@$blogContent->data_values->heading) }}
                             </p>
                         </div>
-                        <h2 class="text-capitalize">{{ __(@$blogContent->data_values->heading) }}</h2>
-                        <p class="t-short-para mx-auto mb-0">
+                        <p class="t-short-para mx-auto mb-0" style="text-align: justify!important; margin-top: 1em!important;">
                             {{ __(@$blogContent->data_values->description) }}
                         </p>
                     </div>

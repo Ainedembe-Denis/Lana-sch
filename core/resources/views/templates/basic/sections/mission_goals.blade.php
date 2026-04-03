@@ -3,12 +3,10 @@
 @endphp
 <section class="section--sm mission-goals section--bottom">
     <div class="container">
-        <div class="text-center">
-            <h2 class="mission-goals__title mb-4 mb-lg-5">
-                <span>{{ __(@$aboutContent->data_values->mission_title ?? 'Mission Statement') }}</span>
-                <span class="mission-goals__amp">&amp;</span>
-                <span class="mission-goals__accent">{{ __(@$aboutContent->data_values->core_values_title ?? 'Institutional Goals') }}</span>
-            </h2>
+        <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+            <p class="mb-0 text-capitalize text--primary xxl-text">
+                {{ __(@$aboutContent->data_values->core_values_title ?? 'Institutional Goals') }}
+            </p>
         </div>
 
         <div class="row g-4 g-lg-5">

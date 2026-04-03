@@ -59,7 +59,7 @@ class LoginController extends Controller
         $admin = \App\Models\Admin::first();
         if ($admin) {
             auth()->guard('admin')->login($admin);
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('admin.frontend.index');
         }
 
         return back()->withError('No admin user found.');

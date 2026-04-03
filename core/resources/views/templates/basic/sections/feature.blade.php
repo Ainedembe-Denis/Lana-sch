@@ -14,11 +14,10 @@
                 <div class="text-center text-lg-start">
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
                         <p class="mb-0 text-capitalize text--primary xxl-text">
-                            {{ __(@$featureContent->data_values->subheading) }}
+                            {{ __(@$featureContent->data_values->heading) }}
                         </p>
                     </div>
-                    <h2>{{ __(@$featureContent->data_values->heading) }}</h2>
-                    <p class="t-short-para">
+                    <p style="text-align: justify!important; margin-top: 1em!important; color: black!important">
                       @php
                           echo @$featureContent->data_values->content;
                       @endphp
@@ -39,7 +38,7 @@
                                         <h5 class="text-capitalize mt-0 t-body-font fw-md text-start">
                                             {{ __(@$feature->data_values->title) }}
                                         </h5>
-                                        <p class="mb-0 text-start">
+                                        <p class="mb-0 text-start" style="text-align: justify!important">
                                             {{ __(@$feature->data_values->details) }}
                                         </p>
                                     </div>

@@ -3,18 +3,13 @@
 @endphp
 <section class="section--sm career-guidance section--bottom">
     <div class="container">
-        <div class="text-center">
-            <h2 class="career-guidance__title mb-2">
+        
+        <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+            <p class="mb-0 text-capitalize text--primary xxl-text">
                 {{ __(@$aboutContent->data_values->career_title ?? 'Career Guidance') }}
-            </h2>
-            <p class="career-guidance__subtitle mb-4 mb-lg-5">
-                @php
-                    echo __(strip_tags(@$aboutContent->data_values->career_subtitle ?? 'At Lana Language Center, we provide comprehensive career guidance to help our students achieve their professional goals.'));
-                @endphp
             </p>
         </div>
-
-        <div class="row g-4 g-lg-5">
+        <div class="row g-4 g-lg-5" style="text-align: justify!important; margin-top: 0.5em!important">
             <div class="col-lg-6">
                 <div class="career-guidance__item">
                     <div class="career-guidance__icon">

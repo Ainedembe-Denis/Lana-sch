@@ -23,56 +23,21 @@
         ],
         "title": "Dashboard",
         "icon": "las la-home",
-        "route_name": "admin.dashboard",
-        "menu_active": "admin.dashboard"
+        "route_name": "admin.frontend.index",
+        "menu_active": "admin.frontend.index"
     },
-    "frontend": {
-        "keyword": ["frontend", "website", "template", "manage frontend", "frontend contents", "pages", "sections", "banner", "about", "contact", "blog", "faq"],
-        "title": "Frontend",
-        "icon": "la la-html5",
-        "menu_active": "admin.frontend*",
-        "submenu": [{
-                "keyword": ["Manage Frontend", "frontend content", "sections", "banner", "about"],
-                "title": "Manage Content",
-                "route_name": "admin.frontend.index",
-                "menu_active": "admin.frontend.index"
-            },
-            {
-                "keyword": ["Manage Pages", "pages", "home page", "contact page"],
-                "title": "Manage Pages",
-                "route_name": "admin.frontend.manage.pages",
-                "menu_active": "admin.frontend.manage.pages"
-            },
-            {
-                "keyword": ["Templates", "template", "theme"],
-                "title": "Templates",
-                "route_name": "admin.frontend.templates",
-                "menu_active": "admin.frontend.templates"
-            }
-        ]
+    "manage_pages": {
+        "keyword": ["Manage Pages", "pages", "home page", "contact page"],
+        "title": "Manage Pages",
+        "icon": "la la-file",
+        "route_name": "admin.frontend.manage.pages",
+        "menu_active": "admin.frontend.manage.pages"
     },
-    "extra": {
-        "title": "Extra",
-        "icon": "la la-server",
-        "menu_active": "admin.system*",
-        "submenu": [{
-                "keyword": ["Application", "System", "Application management", "Application settings", "System information", "version", "laravel", "timezone"],
-                "title": "Application",
-                "route_name": "admin.system.info",
-                "menu_active": "admin.system.info"
-            },
-            {
-                "keyword": ["Server", "System", "Server management", "Server settings", "System information", "version", "php version", "software", "ip address", "server ip address", "server port", "http host"],
-                "title": "Server",
-                "route_name": "admin.system.server.info",
-                "menu_active": "admin.system.server.info"
-            },
-            {
-                "keyword": ["Cache", "System", "Cache management", "Cache optimization", "System performance", "clear cache"],
-                "title": "Cache",
-                "route_name": "admin.system.optimize",
-                "menu_active": "admin.system.optimize"
-            }
-        ]
+    "cache": {
+        "keyword": ["Cache", "System", "Cache management", "Cache optimization", "System performance", "clear cache"],
+        "title": "Cache",
+        "icon": "las la-hdd",
+        "route_name": "admin.system.optimize",
+        "menu_active": "admin.system.optimize"
     }
 }

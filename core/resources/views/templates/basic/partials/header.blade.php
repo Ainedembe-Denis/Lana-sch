@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <ul class="list list--row d-flex align-items-center position-relative w-100" style="min-height: 40px;">
+                <ul class="list list--row d-flex align-items-center position-relative w-100" style="min-height: 40px; margin-top: 1em!important;">
                     <li class="list--row__item mx-auto">
                         <ul class="list vf-info-list d-flex justify-content-center m-0 p-0">
                             <li class="vf-info-list__item">
@@ -66,12 +66,19 @@
     </div>
 </section>
 
+<style>
+    .hero__content-title {
+        margin-top: 2em!important;
+    }
+
+    }
+</style>
 
 <header class="header" id="header">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a href="{{ route('home') }}" class="logo">
-                <img src="{{ siteLogo() }}" alt="viserhyip" class="img-fluid logo__is" />
+                <img src="{{ siteLogo() }}" alt="{{ __(gs('site_name')) }}" class="img-fluid logo__is" />
             </a>
             <button class="navbar-toggler header-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span id="hiddenNav"><i class="las la-bars"></i></span>
@@ -97,14 +104,8 @@
                                     <div class="mega-menu dropdown-menu">
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-lg-3">
-                                                    <h6 class="mega-menu-title">About Us</h6>
-                                                    <div class="mega-menu-content">
-                                                        <img src="{{ siteLogo() }}" alt="Logo" class="img-fluid mb-3" style="max-height: 100px;">
-                                                        <p>Lana Language Centre is Uganda's premier language school specializing in German languages, Indo-European languages, and Ugandan local languages.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3">
+                                                
+                                                <div class="col-lg-4">
                                                     <h6 class="mega-menu-title">German Courses</h6>
                                                     @php
                                                         $germanCourseItems = $germanCourses->filter(function ($course) {
@@ -126,7 +127,7 @@
                                                         @endforeach
                                                     </ul>
                                                 </div>
-                                                <div class="col-lg-3">
+                                                <div class="col-lg-4">
                                                     <h6 class="mega-menu-title">Other Languages</h6>
                                                     <ul class="mega-menu-list">
                                                         <li><a href="{{ route('format.duration') }}">Format And Duration</a></li>
@@ -134,11 +135,11 @@
                                                         <li><a href="{{ route('other.languages') }}#ugandan-local">Ugandan Local Languages</a></li>
                                                     </ul>
                                                 </div>
-                                                <div class="col-lg-3">
+                                                <div class="col-lg-4">
                                                     <h6 class="mega-menu-title">Get Started</h6>
                                                     <ul class="mega-menu-list">
                                                         <li><a href="{{ route('annual.program') }}">Annual Program</a></li>
-                                                        <li><a href="#">Register To Start Classes</a></li>
+                                                        <li><a href="{{ route('register') }}">Register To Start Classes</a></li>
                                                     </ul>
                                                 </div>
                                             </div>

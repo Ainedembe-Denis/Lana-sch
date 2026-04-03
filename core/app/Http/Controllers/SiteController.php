@@ -273,7 +273,6 @@ class SiteController extends Controller
         imagejpeg($image);
         imagedestroy($image);
     }
-
     public function maintenance()
     {
         $pageTitle = 'Maintenance Mode';
@@ -282,6 +281,12 @@ class SiteController extends Controller
         }
         $maintenance = Frontend::where('data_keys', 'maintenance.data')->first();
         return view('Template::maintenance', compact('pageTitle', 'maintenance'));
+    }
+
+    public function register()
+    {
+        $pageTitle = 'Register';
+        return view('Template::register', compact('pageTitle'));
     }
 
 }

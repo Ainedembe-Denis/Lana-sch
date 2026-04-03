@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
  */
+/*
 
 Route::namespace('Api')->name('api.')->group(function () {
 
@@ -119,4 +121,7 @@ Route::namespace('Api')->name('api.')->group(function () {
 
         Route::get('logout', 'Auth\LoginController@logout');
     });
-});
+}); 
+
+ */
+

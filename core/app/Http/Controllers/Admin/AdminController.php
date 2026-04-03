@@ -15,15 +15,7 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        $pageTitle = 'Dashboard';
-
-        // Dashboard widgets removed - no user/deposit/withdrawal management needed
-        $widget = [];
-        $chart = [];
-        $deposit = [];
-        $withdrawals = [];
-
-        return view('admin.dashboard', compact('pageTitle', 'widget', 'chart', 'deposit', 'withdrawals'));
+        return to_route('admin.frontend.index');
     }
 
 
